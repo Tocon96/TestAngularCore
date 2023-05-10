@@ -1,0 +1,39 @@
+<div class="container my-5">
+  <h1 class="mb-3">Edit Employee</h1>
+
+  <form #form="ngForm" (ngSubmit)="updateEmployee()">
+    <div class="mb-3">
+      <label for="employeename" class="form-label">Name</label>
+      <input type="text" class="form-control" id="employeename" aria-describedby="employeeNameHelp" [(ngModel)]="employeeDetails.name" name="name">
+      <div id="employeeNameHelp" class="form-text">Employee's Full Name</div>
+    </div>
+    <div class="mb-3">
+      <label for="employeeemail" class="form-label">Email</label>
+      <input type="email" class="form-control" id="employeeemail" aria-describedby="employeeemailhelp" [(ngModel)]="employeeDetails.email" name="email">
+      <div id="employeeemailhelp" class="form-text">Employee's Email</div>
+    </div>
+    <div class="mb-3">
+      <label for="employeephone" class="form-label">Phone</label>
+      <input type="number" class="form-control" id="employeephone" aria-describedby="employeephoneHelp" [(ngModel)]="employeeDetails.phone" name="phone">
+      <div id="employeephoneHelp" class="form-text">Employee's Phone</div>
+    </div>
+    <div class="mb-3">
+      <label for="employeesalary" class="form-label">Salary</label>
+      <input type="number" class="form-control" id="employeename" aria-describedby="employeesalaryHelp" [(ngModel)]="employeeDetails.salary" name="salary">
+      <div id="employeesalaryHelp" class="form-text">Employee's Salary</div>
+    </div>
+    <div class="mb-3">
+      <label for="employeedepartment" class="form-label">Department</label>
+      <select class="form-control" id="employeedepartment" aria-describedby="employeedepartmentHelp" [(ngModel)]="employeeDetails.department" name="department">
+        <option value="" selected></option>
+        <option *ngFor="let department of departments">
+          {{department}}
+        </option>
+      </select>
+      <div id="employeedepartmentHelp" class="form-text">Employee's Department</div>
+    </div>
+    <button type="submit" class="btn btn-primary mr-5">Save</button>
+    <button type="button" class="btn btn-danger" (click)="deleteEmployee(employeeDetails.id)">Delete</button>
+  </form>
+</div>
+S
